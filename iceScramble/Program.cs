@@ -1,10 +1,13 @@
-﻿namespace iceScramble
+﻿using System;
+
+class IceScramble
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        Console.WriteLine("Welcome to the Ice Scramble Ordering System");
+
+        Console.WriteLine("Flavor Options:");
+        Console.WriteLine("1. Ube ")
+            Console.WriteLine("2. Strawberry")
     }
 }
