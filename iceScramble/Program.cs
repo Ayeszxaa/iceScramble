@@ -7,7 +7,8 @@ class IceScramble
         Console.WriteLine("Welcome to the Ice Scramble Ordering System");
 
         Console.WriteLine("Flavor Options:");
-        Console.WriteLine("1. Ube ")
-            Console.WriteLine("2. Strawberry")
+        Console.WriteLine("1. Ube ");
+        Console.WriteLine("2. Strawberry");
+        
     }
 }
