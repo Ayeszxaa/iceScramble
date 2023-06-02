@@ -1,6 +1,4 @@
-﻿//JIMENEZ, BLESSIE MAE AYESSA D.
-
-using System;
+﻿using System;
 
 class IceScramble
 {
@@ -8,37 +6,40 @@ class IceScramble
     {
         Console.WriteLine("Welcome to the Ice Scramble Land System!");
 
-        // Display flavor options
+        // Display available flavor with prices
         Console.WriteLine("Available Flavor:");
-        Console.WriteLine("1. Ube");
-        Console.WriteLine("2. Strawberry");
+        Console.WriteLine("1. Ube (₱20)");
+        Console.WriteLine("2. Strawberry (₱25)");
 
         string flavor = GetValidFlavorSelection();
 
-        // Display syrup options
+        // Display available syrup with prices
         Console.WriteLine("\nAvailable Syrup:");
-        Console.WriteLine("1. Chocolate");
-        Console.WriteLine("2. Milk");
+        Console.WriteLine("1. Chocolate (₱10)");
+        Console.WriteLine("2. Milk (₱5)");
 
         string syrup = GetValidSyrupSelection();
 
-        // Display toppings options
+        // Display available toppings with prices
         Console.WriteLine("\nAvailable Toppings:");
-        Console.WriteLine("1. Sprinkles");
-        Console.WriteLine("2. Marshmallow");
+        Console.WriteLine("1. Sprinkles (₱5)");
+        Console.WriteLine("2. Marshmallow (₱8)");
 
         string toppings = GetValidToppingsSelection();
 
+        // Calculate the total price
+        int total = GetTotalPrice(flavor, syrup, toppings);
+
         // Display the order summary
         Console.WriteLine("\nYour order is:");
-        Console.WriteLine($" {flavor} Flavor");
-        Console.WriteLine($" with {syrup} Syrup");
-        Console.WriteLine($" and {toppings} Toppings ");
+        Console.WriteLine($"- {flavor} Flavor");
+        Console.WriteLine($"- {syrup} Syrup");
+        Console.WriteLine($"- {toppings} Toppings");
+        Console.WriteLine($"Total Price: ₱{total}");
 
         // Wait for user input before closing the program
-        Console.WriteLine("\nThankyou for Ordering have a nice day ^_^");
-  
-          Console.WriteLine("\nPress any key to exit...");
+        Console.WriteLine("\nThank you for ordering! Have a nice day ^_^");
+        Console.WriteLine("\nPress any key to exit...");
         Console.ReadKey();
     }
 
@@ -131,4 +132,53 @@ class IceScramble
 
         return toppings;
     }
+
+    static int GetTotalPrice(string flavor, string syrup, string toppings)
+    {
+        int flavorPrice = GetFlavorPrice(flavor);
+        int syrupPrice = GetSyrupPrice(syrup);
+        int toppingsPrice = GetToppingsPrice(toppings);
+
+        return flavorPrice + syrupPrice + toppingsPrice;
+    }
+
+    static int GetFlavorPrice(string flavor)
+    {
+        switch (flavor)
+        {
+            case "Ube":
+                return 20;
+            case "Strawberry":
+                return 25;
+            default:
+                return 0;
+        }
+    }
+
+    static int GetSyrupPrice(string syrup)
+    {
+        switch (syrup)
+        {
+            case "Chocolate":
+                return 10;
+            case "Milk":
+                return 5;
+            default:
+                return 0;
+        }
+    }
+
+    static int GetToppingsPrice(string toppings)
+    {
+        switch (toppings)
+        {
+            case "Sprinkles":
+                return 5;
+            case "Marshmallow":
+                return 8;
+            default:
+                return 0;
+        }
+    }
 }
+
